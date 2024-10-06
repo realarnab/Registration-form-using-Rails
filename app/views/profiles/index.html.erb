@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Profiles" %>
+
+<h1>Profiles</h1>
+
+<div id="profiles">
+  <% @profiles.each do |profile| %>
+    <%= render partial: "profile_index", locals: { profile: profile } %>
+    <p>
+      <%= link_to "Show this profile", profile %>
+    </p>
+  <% end %>
+</div>
+
+<p>
+  <%= link_to "New profile", new_profile_path %>
+</p>
