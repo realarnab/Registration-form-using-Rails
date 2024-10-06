@@ -26,9 +26,17 @@ class ProfileValidator < ActiveModel::Validator
     end
   end
 
+  # def validate_gender(record)
+  #   unless %w[Male Female Other].include?(record.gender) || record.gender.blank?
+  #     record.errors.add(:gender, "must be Male, Female, or Other")
+  #   end
+  # end
   def validate_gender(record)
-    unless %w[Male Female Other].include?(record.gender) || record.gender.blank?
-      record.errors.add(:gender, "must be Male, Female, or Other")
+    allowed_genders = %w[Male Female Other]
+    if record.gender.blank?
+      record.errors.add(:gender, "can't be blank")
+    elsif !allowed_genders.include?(record.gender)
+      record.errors.add(:gender, "#{record.gender} is not a valid gender")
     end
   end
 
