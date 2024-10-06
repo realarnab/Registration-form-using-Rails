@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_02_150034) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_06_082408) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,7 +18,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_02_150034) do
     t.string "name"
     t.integer "age"
     t.string "gender"
-    t.integer "mobile"
+    t.string "mobile"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
