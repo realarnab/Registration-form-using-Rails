@@ -21,6 +21,8 @@ class ProfileValidator < ActiveModel::Validator
       record.errors.add(:age, "can't be blank")
     elsif record.age.to_i < 0
       record.errors.add(:age, "must be greater than or equal to 0")
+    elsif record.age.to_i > 150
+      record.errors.add(:age, "must be lesser than 150")
     elsif record.age.to_i != record.age
       record.errors.add(:age, "must be an integer")
     end
